@@ -4,4 +4,5 @@ from django.shortcuts import render
 def logFn(request):
     return render(request,'log.html')
 
-    
+def sinFn(request):
+    return render(request,'signup.html')
