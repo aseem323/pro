@@ -1,7 +1,7 @@
 function validate(){
     name1=document.getElementById('exampleInputEmail1')
     pass=document.getElementById('exampleInputPassword1')
-    check=document.getElementById('exampleCheck1')
+    
     if(name1.value==""){
         document.getElementById('name2').innerHTML='enter name'
         name1.focus()
@@ -17,12 +17,23 @@ function validate(){
         return false
     }
     if(pass.value.length<=8 && pass.value!=""){
-        document.getElementById('pass2').innerHTML='password must be 8 charecter'
+        document.getElementById('pass2').innerHTML='wrong password'
+        pass.focus()
+        document.getElementById('pass2').style.color="red"
         return false
     }
     
 }
-function checked(){
-    pass.type="text"
-}
 
+function toggleCheck() {
+//pass=document.getElementById('exampleInputPassword1')
+  // pass.type="text"
+  // console.log("test");
+  var pass = document.getElementById("exampleInputPassword1")
+
+  if (pass.type == "password") {
+    pass.type = "text";
+  } else {
+    pass.type = "password";
+  }
+}

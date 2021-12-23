@@ -4,5 +4,14 @@ from django.shortcuts import render
 def logFn(request):
     return render(request,'log.html')
 
-def sinFn(request):
+def sinpfn(request):
     return render(request,'signup.html')
+
+def homefn(request):
+    return render(request,'home.html')
+
+def inboxfn(request):
+    return render(request,'inbox.html')
+
+def notfn(request):
+    return render(request,'notific.html')
