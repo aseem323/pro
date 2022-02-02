@@ -17,15 +17,16 @@
       <div class="card bg-dark text-white">
         <img src="{% static 'images/bg2.jpg' %}" class="card-img" alt="..." height="600px" width="800px">
         <div class="card-img-overlay">
-            <h1 style="text-align: center;" id="heading">KILSAAPI</h1>
-            <form action="home" method="post">
+            <h1 style="text-align: center;" id="heading">SOCIAL HUB</h1>
+            <form action="" method="POST">
               {% csrf_token %}
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">username</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ><span id="name2"></span>
+                  <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" ><span id="name2"></span>
+                  <p style="color: red;">{{error}}</p>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label" >Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1"><span id="pass2"></span>
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1"><span id="pass2"></span>
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="check" onchange="toggleCheck()">

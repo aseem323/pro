@@ -16,7 +16,7 @@ function validate(){
         pass.style.borderColor="red"
         return false
     }
-    if(pass.value.length<=8 && pass.value!=""){
+    if(pass.value.length<=7 && pass.value!=""){
         document.getElementById('pass2').innerHTML='wrong password'
         pass.focus()
         document.getElementById('pass2').style.color="red"

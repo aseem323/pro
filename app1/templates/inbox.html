@@ -1,25 +1,24 @@
 {% extends "main.html" %} {% load static %} {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-md-5">
             <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">new message</a>
                 </div>
-              </nav>
-              <div class="container">
-                  messages
-              </div>
-            
-              
-            
-
+            </nav>
+            <div class="container mt-4 ">
+                <img src="{% static 'images/dp.jpg' %}" alt="" width="50px">
+                munavvir
+            </div>
+            <div class="container mt-4">
+                <img src="{% static 'images/dp1.jpg' %}" alt="" width="50px">
+                yadhu
+            </div>
         </div>
-        <div class="col-lg-7"> 
+        <div class="col-md-7">  
             <span id="main">your messages</span>
-
         </div>
     </div>
-
 </div>
 {% endblock %}

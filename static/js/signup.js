@@ -1,4 +1,5 @@
 
+
 function toggleCheck(){
     pass = document.getElementById("pass")
 
@@ -24,7 +25,6 @@ function validation(){
         sname1.style.borderColor="red"
         document.getElementById('name2').style.color="red"
         return false
-
     }
     if(smail.value==""){
         document.getElementById('mail2').innerHTML="please enter email"
@@ -62,6 +62,3 @@ function validation(){
         return false
     }
 }
-
-
-
