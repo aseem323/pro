@@ -80,29 +80,32 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-# }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'project',    
-#         'USER': 'postgres',
-#         'PASSWORD': '12345',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
+# 
 # }
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2uoh9kc1v60lk',    
-        'USER': 'sgefwbgtrmxsox',
-        'PASSWORD': 'f622fc86a042ac5c22eba2dbd9e645f4dd9c98e0a41b1cc3c450c30f79e9a334',
-        'HOST': 'ec2-184-73-243-101.compute-1.amazonaws.com',
+        'NAME': 'project',    
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd2uoh9kc1v60lk',    
+#         'USER': 'sgefwbgtrmxsox',
+#         'PASSWORD': 'f622fc86a042ac5c22eba2dbd9e645f4dd9c98e0a41b1cc3c450c30f79e9a334',
+#         'HOST': 'ec2-184-73-243-101.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
