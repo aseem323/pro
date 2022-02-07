@@ -7,7 +7,7 @@ from django.shortcuts import redirect, render
 from app1.models import signup
 
 # Create your views here.
-def logFn(request):
+def log_in(request):
     if request.method=="POST":
         username1 = request.POST['username']
         password1 = request.POST['password']
@@ -24,18 +24,18 @@ def logFn(request):
     return render(request,'log.html')
 
 
-def sessionfn(request):
+def sessionFn(request):
     if 'user_log' in request.session:
         return render(request,'home.html')
     else:
         return render(request,'log')
 
-def logoutfn(request):
+def log_out(request):
     del request.session['user_log']
     return redirect('log')
 
 
-def sinpfn(request):
+def sign_up(request):
     if request.method =="POST":
         #print('hiiiiii')
         sname = request.POST['fname']
@@ -47,7 +47,7 @@ def sinpfn(request):
         
     return render(request,'signup.html')
 
-def ajaxfn(request):
+def ajaxFn(request):
     # print('hiiiiiiii')
     aj = request.POST['username']
     #print(aj)
@@ -63,24 +63,24 @@ def ajaxfn(request):
         return JsonResponse({'message':False})
         
 
-def tablefn(request):
+def user_table(request):
     getdata = signup.objects.all()
     return render(request,'table.html',{'data':getdata})
 
-def delfn(request,id):
+def delete_user(request,id):
     signup.objects.get(id=id).delete()
     return redirect('viewtb')
     #return render(request,'table.html')
 
 
-def homefn(request):
+def home_page(request):
     return render(request,'home.html')
 
-def inboxfn(request):
+def inbox_page(request):
     return render(request,'inbox.html')
 
-def notfn(request):
+def notifications(request):
     return render(request,'notific.html')
 
-def profn(request):
+def profile_page(request):
     return render(request,'profile.html')
