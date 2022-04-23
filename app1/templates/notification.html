@@ -1,0 +1,98 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<div class="container">
+    {% for i in data %}
+    <a style="text-decoration: none; color: black;" href="/profile_view/{{i.followes.id}}">
+    <div class="row">
+        <div class="col-md-3 mt-4 "></div>
+        <div class="col-md-1 mt-4">
+            {% if i.followes.dpimg %}
+            <img src="{{i.followes.dpimg.url}}" alt="" height="50px" width="50px">
+
+            {% else %}
+
+            <img src="{% static 'images/dp3.jpg' %}" height="50px" width="50px" alt="">
+            {% endif %}
+
+        </div>
+        <div class="col-md-5 mt-4">
+            <b>{{i.followes.name}} following you</b>
+        </div>
+        <div class="col-md-3 mt-4"></div>
+    </div>
+    </a>
+    {% endfor %}
+
+    {% for likedPost in likedPosts %}
+    <div class="row">
+        <div class="col-md-3 clo-md-3"></div>
+        <div class="col-md-1 clo-md-6 mt-4">
+            {% if likedPost.profilePic %}
+            <img src="{{likedPost.profilePic}}" alt="" height="50px" width="50px">
+
+            {% else %}
+
+            <img src="{% static 'images/dp3.jpg' %}" height="50px" width="50px"  alt="">
+            {% endif %}
+
+        </div>
+        <div class="col-md-4 clo-md-3 mt-4">
+            <b>{{likedPost.nameOfUser}} liked your post</b>
+            <br>
+            <b>{{likedPost.postdate}} {{likedPost.posttime}}</b>
+        </div>
+        <div class="col-md-4 clo-md-3 mt-4 "><img src="{{likedPost.postName}}" height="50px" width="50px"  alt=""></div>
+    </div>
+    {% endfor %}
+
+
+    {% for comment in comentdata %}
+    <div class="row">
+        <div class="col-md-3 clo-md-3"></div>
+        <div class="col-md-1 clo-md-6 mt-4">
+            {% if comment.profile %}
+            <img src="{{comment.profile}}" alt="" height="50px" width="50px">
+
+            {% else %}
+
+            <img src="{% static 'images/dp3.jpg' %}" height="50px" width="50px"  alt="">
+            {% endif %}
+
+        </div>
+        <div class="col-md-4 clo-md-3 mt-4">
+            <b>{{comment.name}} commented on your post:<span class="text-danger">"{{comment.postcmt}}"</span></b><span>&nbsp;{{comment.date}} {{comment.time}}</span>
+             
+        </div>
+        <div class="col-md-4 clo-md-3 mt-4"><img src="{{comment.pic}}" width="50px" height="50px" alt=""></div>
+
+        <!-- <div class="col-md-3 clo-md-3 mt-4  "><img src="{{comment.postName}}" height="50px" width="50px"  alt=""></div> -->
+    </div>
+    {% endfor %}
+
+
+
+
+    </div>
+
+
+
+
+    <!-- <div class="row">
+        <div class="col-lg-3 clo-md-3"></div>
+        <div class="col-lg-6 clo-md-6 mt-4 container">
+            <img src="{% static 'images/dp1.jpg' %}" alt="" width="50px">
+            yadhu followed you
+        </div>
+        <div class="col-lg-3 clo-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 clo-md-3"></div>
+        <div class="col-lg-6 clo-md-6 mt-4 container">
+            <img src="{% static 'images/dp.jpg' %}" alt="" width="50px">
+            roit followed you
+        </div>
+        <div class="col-lg-3 clo-md-3"></div>
+    </div> -->
+
+
+
+{% endblock %}

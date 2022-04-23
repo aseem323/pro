@@ -1,0 +1,30 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+
+<div class="container">
+    {% for i in data %}
+    <div class="row">
+        <a href="/msguser/{{i.id}}">
+        <div class="col-md-12 mt-4">
+
+            {% if i.dpimg%}
+            <img src="{{i.dpimg.url}}" width="120px" alt="">
+
+            {% else %}
+
+            <img src="{% static 'images/dp3.jpg' %}" width="120px" alt="">
+            {% endif %}
+            
+        </div>
+        </a>
+    </div>
+    <div class="row mt-3" >
+        <div class="col-md-12">
+            <b>{{i.username}}</b><br>
+            <p>click image to send messages</p>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- <p>{{error }}</p> -->
+</div>
+
+{% endblock %}

@@ -1,8 +1,10 @@
 #t1{
-    padding-right: 15px;
+    
+    padding-right: 30px;
 }
 #t2{
-    padding-right: 15px;
+    
+    padding-right: 30px;
 }
 #dp{
     padding-top: 50px;
@@ -11,3 +13,9 @@
 #post{
     padding-top: 20px;
 }
+
+/* .dpimage{
+
+    border-radius: 50%;
+    object-fit: cover;
+} */

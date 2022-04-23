@@ -1,0 +1,72 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+
+<div class="container">
+    <form action="{% url 'follow' %}" method="POST">
+        {% csrf_token %}
+    <div class="row">
+        <div class="col-md-4 mt-4">
+
+            {% if data.dpimg %}
+            <center><img src="{{data.dpimg.url}}" width="120px" alt=""></center>
+
+            {% else %}
+
+            <img src="{% static 'images/dp3.jpg' %}" width="120px" alt="">
+            {% endif %}
+
+        </div>
+        <div class="col-md-8">
+            <div class="row mt-3" >
+                <div class="col-md-4"><center><h4>{{data.username}}</h4></center></div>
+                <div class="col-md-8">
+                    {% if not following %}
+                    <button type="submit" id="fbt" class="btn btn-primary" name="following">follow</button>
+                    {% else %}
+                    <button type="submit" id="ufbt" class="btn btn-primary" name="unfollow">unfollow</button>
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+            <b>{{data.name}}</b><br>    
+            <p>Follow to see their photos</p>   
+        </div>
+    </div>
+    <input type="hidden" name="user_id" id="fl" value="{{data.id}}">
+</form>
+</div>
+
+
+
+
+<!-- <script>
+    $.ajaxSetup({
+    headers:{"X-CSRFToken":'{{csrf_token}}'}
+})
+
+$("#bt").click(function(){
+    $.ajax({
+        url :'http://127.0.0.1:8000/follow',
+        type : 'POST',
+        data:{
+            following:$("#fl").val()
+        },
+        success:function(response){
+            alert('ajax ok')
+            if(response.msg==true){
+                var $submit = $("#bt");
+                $submit.prop('disabled',true);
+            }
+            else
+            {
+                var $submit =$("#bt");
+                $submit.prop('disabled',false);
+            }   
+        },error:function(red){
+            alert('err')
+        }
+    })
+})
+
+</script> --> 
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+
+<div class="container row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-4">
+      <div class="card"  style="width: 18rem;">
+        <img src="{% static 'images/icon.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">drag photos here</h5><br>
+          <form  action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="file" class="form-control"  name="newpost" id=""><br>
+            
+            <button class="btn btn-primary form-control">upload</button>
+
+
+          </form>
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+
+
+
+
+{% endblock %}

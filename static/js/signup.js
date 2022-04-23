@@ -48,7 +48,7 @@ function validation(){
         return false
     }
     if(spass.value.length<=7 && spass.value!=""){
-        document.getElementById('pass_error').innerHTML="password must be 8 charecter"
+        document.getElementById('pass_error').innerHTML="password must be 8 character"
         spass.focus()
         spass.style.borderColor="red"
         document.getElementById('pass_error').style.color="red"

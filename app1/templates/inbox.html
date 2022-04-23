@@ -4,20 +4,44 @@
         <div class="col-md-5">
             <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">new message</a>
+                  <b class="navbar-brand" >messages</b>
                 </div>
             </nav>
-            <div class="container mt-4 ">
-                <img src="{% static 'images/dp.jpg' %}" alt="" width="50px">
-                munavvir
-            </div>
-            <div class="container mt-4">
-                <img src="{% static 'images/dp1.jpg' %}" alt="" width="50px">
-                yadhu
-            </div>
+            {% for d in data %}
+            <a style="text-decoration: none; color: black;" href ="/msguser/{{d.sender.id}}">
+              <div class="row mt-3">
+                <div class="col-md-3">
+                    {% if d.sender.dpimg %}
+                    <img src="{{d.sender.dpimg.url}}" alt="" width="80px">
+                    {% else %}
+                    <img src="{% static 'images/dp3.jpg' %}" width="80px" alt="">
+                    {% endif %}
+                </div>
+                <div class="col-md-3">
+                    <b>{{d.sender.name}}</b>
+                </div>
+                <div class="col-md-6"></div>
+                
+
+              </div>
+            </a>
+            {% endfor %}
         </div>
-        <div class="col-md-7">  
-            <span id="main">your messages</span>
+        <div class="col-md-7 row">  
+            <div class="col-md-4"></div>
+            <div class="col-md-6 mt-5">
+                <center><img src="{% static 'images/bg5.png' %}" width="80px" alt=""></center>
+                <h3>new messages</h3><br>
+                <b>send message to a friends</b><br><br>
+                <form class="d-flex" method="POST" action="search_users"> 
+                    {% csrf_token %}
+                    <input class="form-control me-2" name="search" value="" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                <!-- <a href="search_users"><button class="btn btn-primary" type="submit">send message</button></a>                -->
+            </div>
+            <div class="col-md-2"></div>
+
         </div>
     </div>
 </div>

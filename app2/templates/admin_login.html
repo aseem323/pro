@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin login</title>
+    <link rel="stylesheet" href="{% static 'css/log.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body>
+   <div class="row" id="bg">
+    <div class="col-md-3 col-2"></div>
+     <div class="col-md-6 col-8 align-items-center  p-3 ">
+      <div class="card bg-dark text-white">
+        <img src="{% static 'images/bg2.jpg' %}" class="card-img" alt="..." height="600px" width="800px">
+        <div class="card-img-overlay">
+            <h1 style="text-align: center;" id="heading">ADMIN</h1>
+            <form action="" method="POST">
+              {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">name</label>
+                  <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" ><span id="name2"></span>
+                  <p style="color: red;">{{error}}</p>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label" >Password</label>
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1"><span id="pass2"></span>
+                </div>
+                <div class="mb-3 form-check">
+                  
+                </div>
+                <button type="submit" class="btn btn-primary form-control" onclick="return validate()"><b>Log In</b></button>
+                <br><br><hr>
+             
+              </form>       
+        </div>
+      </div>
+     </div>
+     <div class="col-md-3 col-2"></div>
+   </div>
+     
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+</body>
+</html>
